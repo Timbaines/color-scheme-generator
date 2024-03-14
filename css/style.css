@@ -1,0 +1,188 @@
+/***** GLOBAL STYLES *****/
+html {
+    font-size: 62.5%;
+    font-family: 'Inter', sans-serif;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    background: #ffffff;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+
+body.dark {
+    background: #1F2937;
+    color: #ffffff;
+}
+
+/* TYPOGRAPHY */
+.heading-primary {
+    font-size: 2.6rem;
+}
+
+/***** LAYOUT | START *****/
+.layout-container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 4.5rem;
+    margin: 0 auto;
+    max-width: 960px;
+}
+
+.controls-container {
+    display: flex;
+    justify-content: space-between;
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(213, 213, 213, 0.35);
+    border-radius: 50px;
+    padding: 12px 20px;
+    margin-bottom: 20px;
+}
+
+.palette-container,
+.hex-container {
+    height: 50vh;
+    border-radius: 20px;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+/***** LAYOUT | END *****/
+
+/***** BUTTONS, INPUTS, SELECTS | START *****/
+button, select, .label, .copy, .copy-inner {
+    cursor: pointer;
+}
+
+/* DARK MODE TOGGLE */
+.checkbox {
+    opacity: 0;
+    position: absolute;
+}
+
+.label {
+    background-color: #0d141a;
+    border-radius: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+    position: relative;
+    height: 21px;
+    width: 40px;
+    transform: scale(1.5);
+}
+
+.label .ball {
+    background-color: #ffffff;
+    border-radius: 50%;
+    position: absolute;
+    left: 2px;
+    height: 18px;
+    width: 18px;
+    transform: translateX(0px);
+    transition: transform 0.2s linear;
+}
+
+.checkbox:checked + .label .ball {
+    transform: translateX(18px);
+}
+
+.fa-moon {
+    color: #f1c40f;
+}
+
+.fa-sun {
+    color: #ff9d00;
+}
+
+/* SEED COLOR & SCHEME */
+.seed-color,
+.seed-scheme {
+    width: 43px;
+    height: 43px;
+    border-radius: 50px;
+    padding: 6px;
+    cursor: pointer;
+}
+
+.seed-color {
+    background: #ffffff;
+    border: 1px solid #1F2937;
+}
+
+.seed-scheme {
+    background: #ffffff;
+    border: 1px solid #1F2937;
+    color: #1F2937;
+    padding: 1rem 1rem;
+    width: 40%;
+}
+
+.btn-scheme {
+    background: #0FACFF;
+    border: 1px solid #0FACFF;
+    border-radius: 50px;
+    color: #ffffff;
+    font-weight: 600;
+    padding: 1rem 1rem;
+}
+
+.btn-scheme:hover {
+    background: #0fa3ee;
+    border: 1px solid #0fa3ee;
+}
+
+.copy {
+    font-size: 16px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.copy-inner {
+    display: none;
+}
+/***** BUTTONS, INPUTS, SELECTS | END *****/
+
+/***** MEDIA QUERIES | START *****/
+@media (max-width: 768px) {
+    .palette-container {
+        height: 70vh;
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-content: center;
+    }
+
+    .palette-div {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    /* HEX CODE INSIDE PALETTE CONTAINER */
+    .copy-inner {
+        background: none;
+        border: none;
+        font-size: 16px;
+        display: flex;
+    }
+
+    .hex-container {
+        display: none;
+    }
+}
+/***** MEDIA QUERIES | END *****/

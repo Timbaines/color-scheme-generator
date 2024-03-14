@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Color Scheme Generator</title>
+</head>
+<body>
+<header class="header">
+    <h1 class="heading-primary">CSG</h1>
+    <input type="checkbox" class="checkbox" id="checkIt" />
+    <label class="label" for="checkIt">
+        <i class="fas fa-moon"></i>
+        <i class="fas fa-sun"></i>
+        <span class="ball"></span>
+    </label>
+</header>
+
+<main class="layout-container">
+    <div class="controls-container">
+        <input type="color" class="seed-color" id="seed-color" aria-label="seed-color" value="#F55A5A">
+        <select class="seed-scheme" id="seed-scheme" aria-label="select">
+            <option value="monochrome">Monochrome</option>
+            <option value="monochrome-dark">Monochrome Dark</option>
+            <option value="monochrome-light">Monochrome Light</option>
+            <option value="analogic">Analogic</option>
+            <option value="complement">Complement</option>
+            <option value="analogic-complement">Analogic Complement</option>
+            <option value="triad">Triad</option>
+            <option value="quad">Quad</option>
+        </select>
+        <button class="btn-scheme">Get Color Scheme</button>
+    </div>
+    <!-- Renders Color Palette | Palette DIV -->
+    <div class="palette-container"></div>
+    <!-- Renders HEX Code - Hidden On Mobile - renders Hex Code within Palette Div from .copy-inner class -->
+    <div class="hex-container"></div>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
